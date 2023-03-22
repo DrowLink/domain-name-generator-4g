@@ -12,57 +12,49 @@ window.onload = function() {
   }
 
   function domainNameGenerator() {
-    let pronounAdjRandomized = [];
-    let fullyRandomizedVariable = [];
-    let pronounAdjRandomizedFiltered = [];
     let pronoun = ["the", "our"];
     let adj = ["great", "big"];
     let noun = ["jogger", "racoon"];
 
-    console.log(random());
+    let pronounAdj = [];
+    let pronAdjWithNouns = [];
+    let pronAdjWithNounsAndDotCom = [];
 
-    function pronounAdjPermuts() {
-      for (let i = 0; i < 4; i++) {
-        pronounAdjRandomized.push(pronoun[random()] + adj[random()]);
-
-        // pronounAdjRandomized.push(pronoun[1] + adj[0]);
-        // pronounAdjRandomized.push(pronoun[1] + adj[1]);
-        // pronounAdjRandomized.push(pronoun[0] + adj[0]);
-      }
-
-      pronounAdjRandomizedFiltered = pronounAdjRandomized.filter(() => {
-        for (let i = 0; i < pronounAdjRandomized.length; i++) {
-          pronounAdjRandomized[i] != pronounAdjRandomized;
-        }
-      });
-
-      return pronounAdjRandomizedFiltered;
-    }
-
-    pronounAdjPermuts();
-
-    function fullyRandomized() {
-      for (let i = 0; i < 4; i++) {
-        for (let j = 0; j < 4; j++) {
-          let content = pronounAdjRandomizedFiltered[i] + noun[random];
-          fullyRandomizedVariable.push(content);
+    function mixPronounAdj() {
+      for (let i = 0; i < 2; i++) {
+        for (let j = 0; j < 2; j++) {
+          let temporalVariable = pronoun[i] + adj[j];
+          pronounAdj.push(temporalVariable);
         }
       }
-      return fullyRandomizedVariable; //Hasta aca todo bien
+      console.log("Hello Rigo from the console!");
+      return pronounAdj;
     }
 
-    fullyRandomized();
+    console.log(mixPronounAdj()); //Devuelve Array 4 elements
 
-    // function deleteRepeateds(fullyRandomizedVariable) {
-    //   for () {}
-    // }
+    function mixPronounAdjectivesWithNoun() {
+      //Cambiar 'arr' por la funcion al final
+      for (let i = 0; i < 4; i++) {
+        for (let j = 0; j < 2; j++) {
+          pronAdjWithNouns.push(pronounAdj[i] + noun[j]);
+        }
+      }
 
-    console.log(pronounAdjPermuts(pronounAdjRandomizedFiltered));
+      return pronAdjWithNouns;
+    }
 
-    console.log(fullyRandomizedVariable);
+    console.log(mixPronounAdjectivesWithNoun()); //Devuelve 8 Arrays
 
-    console.log("Hello Rigo from the console!");
+    function addingDotCom() {
+      for (let i = 0; i < pronAdjWithNouns.length; i++) {
+        pronAdjWithNounsAndDotCom[i] = pronAdjWithNouns[i] + ".com";
+      }
+
+      return pronAdjWithNounsAndDotCom;
+    }
+
+    console.log(addingDotCom());
   }
-
   domainNameGenerator();
 };
