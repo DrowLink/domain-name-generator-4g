@@ -58,3 +58,5 @@ window.onload = function() {
   }
   domainNameGenerator();
 };
+
+//Trabajo finalizado debo refactorizarlo porque se que puede estar mejor el codigo
